@@ -3,9 +3,10 @@ import { GraduationCap, Briefcase, Award, Code, Target, Zap } from 'lucide-react
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 const About: React.FC = () => {
-  const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation();
-  const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation({ threshold: 0.2 });
-  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation({ threshold: 0.1 });
+  // Fix: Specify HTMLDivElement for useScrollAnimation refs
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation<HTMLDivElement>();
+  const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.2 });
+  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation<HTMLDivElement>({ threshold: 0.1 });
 
   return (
     <section 
@@ -153,6 +154,87 @@ const About: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+      {/* Certificates Section */}
+      <div className="mt-20">
+        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
+          <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-semibold mr-3">Certificate</span>
+          Certificates
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="group relative overflow-hidden rounded-2xl shadow-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 flex flex-col">
+            <div className="flex items-center mb-4">
+              <span className="inline-block px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded text-xs font-bold mr-2">Completed</span>
+              <span className="text-gray-700 dark:text-gray-300 text-sm">Apr 2024</span>
+            </div>
+            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+              Introduction to Software Engineering
+            </h4>
+            <div className="text-gray-600 dark:text-gray-300 text-sm mb-2">IBM · Coursera</div>
+            <a
+              href="https://www.coursera.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-semibold transition-all duration-300"
+            >
+              View Certificate
+            </a>
+          </div>
+          <div className="group relative overflow-hidden rounded-2xl shadow-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 flex flex-col">
+            <div className="flex items-center mb-4">
+              <span className="inline-block px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded text-xs font-bold mr-2">Completed</span>
+              <span className="text-gray-700 dark:text-gray-300 text-sm">Apr 2024</span>
+            </div>
+            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+              Computer Networks and Network Security
+            </h4>
+            <div className="text-gray-600 dark:text-gray-300 text-sm mb-2">IBM · Coursera</div>
+            <a
+              href="https://www.coursera.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-semibold transition-all duration-300"
+            >
+              View Certificate
+            </a>
+          </div>
+          <div className="group relative overflow-hidden rounded-2xl shadow-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 flex flex-col">
+            <div className="flex items-center mb-4">
+              <span className="inline-block px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded text-xs font-bold mr-2">Completed</span>
+              <span className="text-gray-700 dark:text-gray-300 text-sm">Apr 2024</span>
+            </div>
+            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+              What Is Generative AI?
+            </h4>
+            <div className="text-gray-600 dark:text-gray-300 text-sm mb-2">LinkedIn Learning</div>
+            <a
+              href="https://lnkd.in/eQxt5Vnb"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-semibold transition-all duration-300"
+            >
+              View Certificate
+            </a>
+          </div>
+          <div className="group relative overflow-hidden rounded-2xl shadow-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 flex flex-col">
+            <div className="flex items-center mb-4">
+              <span className="inline-block px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded text-xs font-bold mr-2">Completed</span>
+              <span className="text-gray-700 dark:text-gray-300 text-sm">Apr 2024</span>
+            </div>
+            <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+              HTML, CSS, and JavaScript: Building the Web
+            </h4>
+            <div className="text-gray-600 dark:text-gray-300 text-sm mb-2">LinkedIn Learning</div>
+            <a
+              href="https://lnkd.in/e_zn65Q2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-semibold transition-all duration-300"
+            >
+              View Certificate
+            </a>
           </div>
         </div>
       </div>

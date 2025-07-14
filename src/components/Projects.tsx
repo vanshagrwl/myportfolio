@@ -1,175 +1,120 @@
 import React from 'react';
-import { ExternalLink, Github, CheckCircle, XCircle, Star, Zap } from 'lucide-react';
+import { Github, ExternalLink, Zap } from 'lucide-react';
+
+const projects = [
+  {
+    title: 'Social Media Automation with Python (Instagram API)',
+    description:
+      'Automated Instagram posting using Python and the instagrapi library. Programmatically uploaded images and captions, explored unofficial API interactions, and learned about automation challenges and capabilities.',
+    tech: ['Python', 'instagrapi', 'Instagram API', 'Automation'],
+    image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=compress&w=600',
+    isLive: false,
+    liveUrl: '',
+    githubUrl: '',
+    problem: 'Manual Instagram posting is time-consuming and repetitive.',
+    solution: 'Used Python automation to post images and captions directly to Instagram.',
+    outcome: 'Gained insights into API automation and streamlined social media workflows.',
+    color: 'from-pink-400 to-purple-400',
+  },
+  {
+    title: 'Voice Call Automation with Python (Twilio)',
+    description:
+      'Programmatically made phone calls using Python and the Twilio API. Explored API communication, call flow management with TwiML, and real-time interaction to bridge digital systems with traditional communication channels.',
+    tech: ['Python', 'Twilio', 'TwiML', 'API Integration', 'Automation'],
+    image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=compress&w=600',
+    isLive: false,
+    liveUrl: '',
+    githubUrl: '',
+    problem: 'Manual outbound calls are inefficient and hard to scale.',
+    solution: 'Integrated Python with Twilio to automate outbound voice calls and deliver messages.',
+    outcome: 'Enabled scalable, programmable voice communication for real-time needs.',
+    color: 'from-blue-400 to-cyan-400',
+  },
+  {
+    title: 'SMS Automation with Python (Twilio)',
+    description:
+      'Automated SMS sending using Python and the Twilio API. Integrated Python with Twilio to efficiently dispatch text messages, gaining experience in API integration, authentication, and real-time communication.',
+    tech: ['Python', 'Twilio', 'API Integration', 'Automation'],
+    image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=compress&w=600',
+    isLive: false,
+    liveUrl: '',
+    githubUrl: '',
+    problem: 'Manual SMS sending is inefficient and not scalable.',
+    solution: 'Used Python and Twilio API to automate SMS dispatch and manage real-time communication.',
+    outcome: 'Streamlined SMS communication and improved efficiency for messaging tasks.',
+    color: 'from-green-400 to-blue-400',
+  },
+  {
+    title: 'WhatsApp Direct Message Utility',
+    description:
+      'A web utility built with HTML, CSS, and JavaScript to send WhatsApp messages directly without saving contacts. Focused on a premium, professional, and elegant UI/UX with a sophisticated color palette, typography, and responsive interactions.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'UI/UX', 'Web Development'],
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=compress&w=600',
+    isLive: false,
+    liveUrl: '',
+    githubUrl: '',
+    problem: 'Sending WhatsApp messages usually requires saving contacts, which is inefficient for quick communication.',
+    solution: 'Developed a utility to send messages directly, focusing on seamless and elegant user experience.',
+    outcome: 'Enabled users to send WhatsApp messages quickly with a refined, professional interface.',
+    color: 'from-green-500 to-emerald-500',
+  },
+  {
+    title: 'Email Automation with Python',
+    description:
+      'Automated email sending using Python. Explored email automation, authentication, and integration with external services to efficiently dispatch emails for various use cases.',
+    tech: ['Python', 'Email Automation', 'SMTP', 'API Integration'],
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=compress&w=600',
+    isLive: false,
+    liveUrl: '',
+    githubUrl: '',
+    problem: 'Manual email sending is repetitive and time-consuming.',
+    solution: 'Used Python to automate email dispatch, including authentication and integration with email services.',
+    outcome: 'Improved efficiency and reliability of email communication for multiple scenarios.',
+    color: 'from-yellow-400 to-orange-400',
+  },
+];
 
 const Projects: React.FC = () => {
-  const projects = [
-    {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with user authentication, product management, and secure payment integration. Built with React and Node.js.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Express.js', 'Stripe'],
-      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600',
-      isLive: true,
-      liveUrl: '#',
-      githubUrl: '#',
-      problem: 'Small businesses needed an affordable e-commerce solution',
-      solution: 'Built a scalable platform with modern tech stack',
-      outcome: 'Increased sales by 40% for client businesses',
-      featured: true
-    },
-    {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, team collaboration features, and progress tracking.',
-      tech: ['React', 'Firebase', 'Tailwind CSS', 'WebRTC'],
-      image: 'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=600',
-      isLive: true,
-      liveUrl: '#',
-      githubUrl: '#',
-      problem: 'Teams struggled with project coordination',
-      solution: 'Created real-time collaboration platform',
-      outcome: 'Improved team productivity by 60%',
-      featured: false
-    },
-    {
-      title: 'Weather Analytics Dashboard',
-      description: 'A comprehensive weather analytics dashboard with data visualization, forecasting, and location-based insights.',
-      tech: ['React', 'D3.js', 'Weather API', 'Chart.js'],
-      image: 'https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=600',
-      isLive: false,
-      liveUrl: '#',
-      githubUrl: '#',
-      problem: 'Complex weather data needed better visualization',
-      solution: 'Built interactive dashboard with real-time updates',
-      outcome: 'Enhanced decision-making for weather-dependent businesses',
-      featured: false
-    },
-    {
-      title: 'Social Media Analytics',
-      description: 'An analytics platform for social media metrics with automated reporting and performance insights.',
-      tech: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma'],
-      image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600',
-      isLive: true,
-      liveUrl: '#',
-      githubUrl: '#',
-      problem: 'Marketers needed unified social media insights',
-      solution: 'Developed comprehensive analytics platform',
-      outcome: 'Saved 10+ hours per week in reporting',
-      featured: true
-    }
-  ];
-
   return (
     <section id="projects" className="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 to-pink-50/30 dark:from-purple-950/10 dark:to-pink-950/10"></div>
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 bg-green-100 dark:bg-green-900/30 rounded-full text-green-600 dark:text-green-400 text-sm font-medium mb-4">
-            <Star className="w-4 h-4 mr-2" />
-            Featured Projects
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-green-900 dark:from-white dark:to-green-100 bg-clip-text text-transparent mb-6">
-            Real-World Solutions
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mt-6 max-w-2xl mx-auto">
-            Showcasing applications that solve actual problems and create value
-          </p>
-        </div>
-
+        <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 to-green-900 dark:from-white dark:to-green-100 bg-clip-text text-transparent mb-6 text-center">
+          My Projects
+        </h2>
+        <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full mb-12"></div>
         <div className="space-y-32">
           {projects.map((project, index) => (
             <div
               key={index}
-              className={`flex flex-col lg:flex-row gap-16 items-center ${
-                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-              }`}
+              className={`flex flex-col lg:flex-row gap-16 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
             >
-              {/* Project Image */}
-              <div className="flex-1 relative">
-                <div className="group relative overflow-hidden rounded-3xl shadow-2xl">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-80 lg:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  {/* Status badge */}
-                  <div className="absolute top-6 right-6">
-                    <span className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-bold shadow-lg ${
-                      project.isLive
-                        ? 'bg-green-500 text-white'
-                        : 'bg-red-500 text-white'
-                    }`}>
-                      {project.isLive ? (
-                        <><CheckCircle className="w-4 h-4 mr-2" /> Live</>
-                      ) : (
-                        <><XCircle className="w-4 h-4 mr-2" /> Demo</>
-                      )}
-                    </span>
-                  </div>
-
-                  {/* Featured badge */}
-                  {project.featured && (
-                    <div className="absolute top-6 left-6">
-                      <span className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-full text-sm font-bold shadow-lg">
-                        <Star className="w-4 h-4 mr-2 fill-current" />
-                        Featured
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Hover overlay with quick actions */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="flex space-x-4">
-                      <a
-                        href={project.liveUrl}
-                        className="group/btn relative overflow-hidden px-6 py-3 bg-white text-gray-900 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 interactive"
-                      >
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 translate-x-[-100%] group-hover/btn:translate-x-0 transition-transform duration-500"></div>
-                        <div className="relative flex items-center group-hover/btn:text-white transition-colors duration-300">
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          View Live
-                        </div>
-                      </a>
-                      <a
-                        href={project.githubUrl}
-                        className="group/btn relative overflow-hidden px-6 py-3 bg-gray-900 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 interactive"
-                      >
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 translate-x-[-100%] group-hover/btn:translate-x-0 transition-transform duration-500"></div>
-                        <div className="relative flex items-center">
-                          <Github className="w-4 h-4 mr-2" />
-                          Code
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+              {/* Project Image with water fill animation */}
+              <div className="group relative overflow-hidden rounded-3xl shadow-2xl w-full max-w-md">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-80 lg:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                {/* Water fill animation overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${project.color} translate-y-[100%] group-hover:translate-y-[40%] transition-transform duration-1000 ease-out opacity-20 pointer-events-none`}></div>
               </div>
-
               {/* Project Content */}
               <div className="flex-1 space-y-8">
-                <div>
-                  <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                    {project.title}
-                  </h3>
-                  <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
-
-                {/* Problem, Solution, Outcome */}
+                <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                  {project.title}
+                </h3>
+                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {project.description}
+                </p>
+                {/* Problem, Solution, Outcome with animated fill */}
                 <div className="space-y-6">
                   {[
                     { label: 'Problem', content: project.problem, color: 'from-red-500 to-pink-500' },
                     { label: 'Solution', content: project.solution, color: 'from-blue-500 to-purple-500' },
-                    { label: 'Outcome', content: project.outcome, color: 'from-green-500 to-emerald-500' }
+                    { label: 'Outcome', content: project.outcome, color: 'from-green-500 to-emerald-500' },
                   ].map((item, itemIndex) => (
                     <div key={itemIndex} className="group/item relative overflow-hidden p-4 bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 interactive">
-                      <div className={`absolute inset-0 bg-gradient-to-r ${item.color} translate-x-[-100%] group-hover/item:translate-x-0 transition-transform duration-500 ease-out opacity-5`}></div>
+                      <div className={`absolute inset-0 bg-gradient-to-r ${item.color} translate-x-[-100%] group-hover/item:translate-x-0 transition-transform duration-500 ease-out opacity-10`}></div>
                       <div className="relative">
                         <h4 className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2 flex items-center">
                           <Zap className="w-4 h-4 mr-2" />
@@ -182,7 +127,6 @@ const Projects: React.FC = () => {
                     </div>
                   ))}
                 </div>
-
                 {/* Tech Stack */}
                 <div>
                   <h4 className="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-4">
@@ -202,29 +146,34 @@ const Projects: React.FC = () => {
                     ))}
                   </div>
                 </div>
-
                 {/* Action Buttons */}
-                <div className="flex gap-6 pt-4">
-                  <a
-                    href={project.liveUrl}
-                    className="group relative overflow-hidden px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl interactive"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
-                    <div className="relative flex items-center">
-                      <ExternalLink className="w-5 h-5 mr-2" />
-                      Live Demo
-                    </div>
-                  </a>
-                  <a
-                    href={project.githubUrl}
-                    className="group relative overflow-hidden px-8 py-4 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 interactive"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-700 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
-                    <div className="relative flex items-center group-hover:text-white transition-colors duration-300">
-                      <Github className="w-5 h-5 mr-2" />
-                      Source Code
-                    </div>
-                  </a>
+                <div className="flex space-x-4 mt-6">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      className="group relative overflow-hidden px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl interactive"
+                      target="_blank" rel="noopener noreferrer"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+                      <div className="relative flex items-center">
+                        <ExternalLink className="w-5 h-5 mr-2" />
+                        Live Demo
+                      </div>
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      className="group relative overflow-hidden px-8 py-4 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-2xl font-semibold transition-all duration-300 transform hover:scale-105 interactive"
+                      target="_blank" rel="noopener noreferrer"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-700 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500 ease-out"></div>
+                      <div className="relative flex items-center group-hover:text-white transition-colors duration-300">
+                        <Github className="w-5 h-5 mr-2" />
+                        Source Code
+                      </div>
+                    </a>
+                  )}
                 </div>
               </div>
             </div>

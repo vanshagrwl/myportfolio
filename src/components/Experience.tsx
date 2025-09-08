@@ -56,32 +56,33 @@ const Experience: React.FC = () => {
   const getTypeColor = (type: string) => {
     switch (type) {
       case 'Internship':
-        return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400';
+        return 'vintage-card text-bronze-600 dark:text-bronze-400';
       case 'Freelance':
-        return 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400';
+        return 'vintage-card text-bronze-600 dark:text-bronze-400';
       case 'Education':
-        return 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-400';
+        return 'vintage-card text-bronze-600 dark:text-bronze-400';
       default:
-        return 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-400';
+        return 'vintage-card text-wood-600 dark:text-wood-400';
     }
   };
 
   return (
-    <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-20 relative overflow-hidden grid-overlay">
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold vintage-heading mb-4">
             Experience & Journey
           </h2>
-          <div className="w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
+          <div className="section-divider"></div>
+          <p className="text-lg text-wood-700 dark:text-wood-200 mt-4 max-w-2xl mx-auto">
             My professional journey and academic achievements
           </p>
         </div>
 
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500 hidden md:block"></div>
+          {/* Vintage Timeline line */}
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-bronze-500 to-copper-500 hidden md:block"></div>
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
@@ -92,21 +93,21 @@ const Experience: React.FC = () => {
                   animationDelay: `${index * 200}ms`,
                 }}
               >
-                {/* Timeline dot */}
-                <div className="hidden md:flex items-center justify-center w-16 h-16 bg-white dark:bg-gray-900 border-4 border-blue-500 rounded-full shadow-lg relative z-10">
-                  <div className="text-blue-500">
+                {/* Vintage Timeline dot */}
+                <div className="hidden md:flex items-center justify-center w-16 h-16 vintage-card border-4 border-bronze-500 rounded-full shadow-lg relative z-10">
+                  <div className="text-bronze-500">
                     {exp.icon}
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="flex-1 bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300">
+                <div className="flex-1 vintage-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 hang-card interactive">
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                      <h3 className="text-xl font-bold text-wood-900 dark:text-wood-100 mb-2">
                         {exp.title}
                       </h3>
-                      <p className="text-lg text-blue-600 dark:text-blue-400 font-semibold">
+                      <p className="text-lg text-bronze-600 dark:text-bronze-400 font-semibold">
                         {exp.company}
                       </p>
                     </div>
@@ -116,24 +117,24 @@ const Experience: React.FC = () => {
                         {exp.type}
                       </span>
                       
-                      <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                      <div className="flex items-center text-sm text-wood-600 dark:text-wood-400">
                         <Calendar className="w-4 h-4 mr-1" />
                         {exp.period}
                       </div>
                       
-                      <div className="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                      <div className="flex items-center text-sm text-wood-600 dark:text-wood-400">
                         <MapPin className="w-4 h-4 mr-1" />
                         {exp.location}
                       </div>
                     </div>
                   </div>
 
-                  <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+                  <p className="text-wood-700 dark:text-wood-200 mb-6 leading-relaxed">
                     {exp.description}
                   </p>
 
                   <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3 flex items-center">
+                    <h4 className="text-sm font-semibold text-wood-600 dark:text-wood-400 uppercase tracking-wide mb-3 flex items-center">
                       <Target className="w-4 h-4 mr-1" />
                       Key Achievements
                     </h4>
@@ -141,9 +142,9 @@ const Experience: React.FC = () => {
                       {exp.achievements.map((achievement, achIndex) => (
                         <li
                           key={achIndex}
-                          className="flex items-start space-x-2 text-gray-700 dark:text-gray-300"
+                          className="flex items-start space-x-2 text-wood-700 dark:text-wood-300"
                         >
-                          <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-bronze-500 rounded-full mt-2 flex-shrink-0"></div>
                           <span>{achievement}</span>
                         </li>
                       ))}
@@ -151,14 +152,14 @@ const Experience: React.FC = () => {
                   </div>
 
                   <div>
-                    <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3">
+                    <h4 className="text-sm font-semibold text-wood-600 dark:text-wood-400 uppercase tracking-wide mb-3">
                       Technologies Used
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {exp.skills.map((skill, skillIndex) => (
                         <span
                           key={skillIndex}
-                          className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium"
+                          className="px-3 py-1 vintage-card text-wood-700 dark:text-wood-300 rounded-full text-sm font-medium"
                         >
                           {skill}
                         </span>

@@ -1,0 +1,95 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+/Resources <<
+/Font <<
+/F1 5 0 R
+>>
+>>
+>>
+endobj
+
+4 0 obj
+<<
+/Length 200
+>>
+stream
+BT
+/F1 12 Tf
+50 750 Td
+(Vansh Agarwal) Tj
+0 -20 Td
+(Full Stack Developer) Tj
+0 -20 Td
+(Email: vansh251205@gmail.com) Tj
+0 -20 Td
+(Phone: +91-XXXXXXXXXX) Tj
+0 -20 Td
+(Location: India) Tj
+0 -40 Td
+(EDUCATION) Tj
+0 -20 Td
+(Bachelor of Computer Applications) Tj
+0 -10 Td
+(Vivekananda Global University, 2022-2025) Tj
+0 -40 Td
+(EXPERIENCE) Tj
+0 -20 Td
+(Software Development Intern) Tj
+0 -10 Td
+(Linux World, Recently Completed) Tj
+0 -20 Td
+(SKILLS) Tj
+0 -20 Td
+(Frontend: HTML5, CSS3, JavaScript, React, Tailwind CSS, TypeScript) Tj
+0 -20 Td
+(Backend: Node.js, Express.js, MongoDB, PostgreSQL, REST API) Tj
+0 -20 Td
+(Tools: Git, GitHub, VS Code, Postman, Docker, Linux) Tj
+ET
+endstream
+endobj
+
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000274 00000 n 
+0000000525 00000 n 
+trailer
+<<
+/Size 6
+/Root 1 0 R
+>>
+startxref
+610
+%%EOF

@@ -43,25 +43,26 @@ const Skills: React.FC = () => {
 
   const getColorClasses = (color: string) => {
     const colorMap = {
-      blue: 'bg-blue-100 dark:bg-blue-900/30 text-blue-500 group-hover:bg-blue-500 group-hover:text-white',
-      green: 'bg-green-100 dark:bg-green-900/30 text-green-500 group-hover:bg-green-500 group-hover:text-white',
-      purple: 'bg-purple-100 dark:bg-purple-900/30 text-purple-500 group-hover:bg-purple-500 group-hover:text-white',
-      orange: 'bg-orange-100 dark:bg-orange-900/30 text-orange-500 group-hover:bg-orange-500 group-hover:text-white',
-      indigo: 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-500 group-hover:bg-indigo-500 group-hover:text-white',
-      pink: 'bg-pink-100 dark:bg-pink-900/30 text-pink-500 group-hover:bg-pink-500 group-hover:text-white'
+      blue: 'vintage-card text-bronze-500 group-hover:bg-bronze-500 group-hover:text-white',
+      green: 'vintage-card text-bronze-500 group-hover:bg-bronze-500 group-hover:text-white',
+      purple: 'vintage-card text-bronze-500 group-hover:bg-bronze-500 group-hover:text-white',
+      orange: 'vintage-card text-bronze-500 group-hover:bg-bronze-500 group-hover:text-white',
+      indigo: 'vintage-card text-bronze-500 group-hover:bg-bronze-500 group-hover:text-white',
+      pink: 'vintage-card text-bronze-500 group-hover:bg-bronze-500 group-hover:text-white'
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.blue;
   };
 
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-20 relative overflow-hidden grid-overlay">
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold vintage-heading mb-4">
             Skills & Technologies
           </h2>
-          <div className="w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
+          <div className="section-divider"></div>
+          <p className="text-lg text-wood-700 dark:text-wood-200 mt-4 max-w-2xl mx-auto">
             A comprehensive toolkit for building modern web applications
           </p>
         </div>
@@ -70,7 +71,7 @@ const Skills: React.FC = () => {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className="group bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700"
+              className="group vintage-card rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hang-card interactive"
               style={{
                 animationDelay: `${index * 150}ms`,
               }}
@@ -79,7 +80,7 @@ const Skills: React.FC = () => {
                 <div className={`p-3 rounded-lg mr-4 transition-all duration-300 ${getColorClasses(category.color)}`}>
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                <h3 className="text-xl font-semibold text-wood-900 dark:text-wood-100">
                   {category.title}
                 </h3>
               </div>
@@ -88,9 +89,9 @@ const Skills: React.FC = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <div
                     key={skillIndex}
-                    className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+                    className="flex items-center justify-between p-3 vintage-card rounded-lg hover:bg-wood-100 dark:hover:bg-wood-800 transition-colors duration-200 interactive"
                   >
-                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                    <span className="text-sm font-medium text-wood-700 dark:text-wood-300">
                       {skill}
                     </span>
                     <div className="flex space-x-1">
@@ -99,8 +100,8 @@ const Skills: React.FC = () => {
                           key={i}
                           className={`w-2 h-2 rounded-full transition-colors duration-200 ${
                             i < Math.floor(Math.random() * 2) + 4
-                              ? 'bg-blue-500'
-                              : 'bg-gray-300 dark:bg-gray-600'
+                              ? 'bg-bronze-500'
+                              : 'bg-wood-300 dark:bg-wood-600'
                           }`}
                         />
                       ))}

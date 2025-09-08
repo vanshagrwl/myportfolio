@@ -20,14 +20,14 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       setIsDark(savedTheme === 'dark');
     } else {
-      setIsDark(window.matchMedia('(prefers-color-scheme: dark)').matches);
+      setIsDark(true);
     }
   }, []);
 

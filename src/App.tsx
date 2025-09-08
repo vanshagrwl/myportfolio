@@ -8,7 +8,6 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import BackToTop from './components/BackToTop';
-import CustomCursor from './components/CustomCursor';
 import Preloader from './components/Preloader';
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
     <ThemeProvider>
       <div className="relative">
         <Preloader />
-        <CustomCursor />
         <Navigation />
         <main className="overflow-hidden">
           <Hero />
@@ -28,30 +26,37 @@ function App() {
         </main>
         <BackToTop />
         
-        <footer className="bg-gray-900 text-white py-8">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <footer className="vintage-card py-8 relative overflow-hidden">
+          {/* Vintage Background Pattern */}
+          <div className="absolute inset-0 bg-vintage-paper opacity-5"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="mb-4 md:mb-0">
-                <p className="text-gray-400">
+                <p className="text-wood-600 dark:text-wood-400">
                   © 2024 Vansh Agarwal. All rights reserved.
                 </p>
               </div>
               <div className="flex space-x-6">
                 <a
                   href="https://github.com/vanshagrwl"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-wood-600 dark:text-wood-400 hover:text-bronze-500 transition-colors duration-200 interactive"
                 >
                   GitHub
                 </a>
                 <a
                   href="https://linkedin.com/in/vansh-agarwal"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-wood-600 dark:text-wood-400 hover:text-bronze-500 transition-colors duration-200 interactive"
                 >
                   LinkedIn
                 </a>
                 <a
                   href="mailto:vansh251205@gmail.com"
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  className="text-wood-600 dark:text-wood-400 hover:text-bronze-500 transition-colors duration-200 interactive"
                 >
                   Email
                 </a>

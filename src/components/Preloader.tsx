@@ -14,22 +14,14 @@ const Preloader: React.FC = () => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 bg-white dark:bg-gray-900 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center" style={{
+      background: 'radial-gradient(circle at 20% 20%, rgba(26,115,232,0.08), transparent 40%), radial-gradient(circle at 80% 30%, rgba(234,67,53,0.08), transparent 40%), radial-gradient(circle at 30% 80%, rgba(52,168,83,0.08), transparent 40%), #faf9f7'
+    }}>
       <div className="text-center">
-        <div className="text-6xl font-bold text-blue-500 mb-4 animate-pulse">
-          VA
+        <div className="text-4xl font-extrabold vintage-heading mb-4">
+          Loading…
         </div>
-        <div className="flex space-x-2 justify-center">
-          {[0, 1, 2].map((i) => (
-            <div
-              key={i}
-              className="w-3 h-3 bg-blue-500 rounded-full animate-bounce"
-              style={{
-                animationDelay: `${i * 0.2}s`,
-              }}
-            />
-          ))}
-        </div>
+        <div className="loading-dots"><div></div><div></div><div></div><div></div></div>
       </div>
     </div>
   );
